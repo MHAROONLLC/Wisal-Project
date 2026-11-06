@@ -308,64 +308,7 @@ export function FleetPreview({ locale }: P) {
   );
 }
 
-export function LicenseShowcase({ locale }: P) {
-  const d = getDictionary(locale);
-  return (
-    <section className={ui.dark}>
-      <div className="container-x grid items-center gap-14 lg:grid-cols-2">
-        <div>
-          <SectionHeading eyebrow={d.home.licenseEyebrow} title={d.home.licenseTitle} text={d.home.licenseText} dark />
-          <Reveal delay={0.1}>
-            <dl className="mt-8 grid grid-cols-3 divide-x divide-white/10 rounded-xl border border-white/12 bg-white/[0.06] rtl:divide-x-reverse">
-              {[
-                { k: d.license.licenseNo, v: company.licenseNo },
-                { k: d.license.registerNo, v: company.registerNo },
-                { k: d.license.dcciNo, v: company.dcciNo },
-              ].map((x) => (
-                <div key={x.k} className="p-4">
-                  <dt className="text-xs text-cyan-200">{x.k}</dt>
-                  <dd className="mt-1 text-lg font-bold tracking-wide sm:text-xl">{x.v}</dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
-          <Reveal delay={0.15} className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href={`/${locale}/license`} size="lg" variant="accent">
-              <FileText className="size-4" /> {d.common.viewLicense}
-            </Button>
-            <Button href={company.dcciVerifyUrl} size="lg" variant="outlineLight">
-              <ShieldCheck className="size-4" /> dubaichamber.ae/verify
-            </Button>
-          </Reveal>
-        </div>
 
-        {/* Document stack — spreads apart on hover */}
-        <Reveal direction="end" className="relative mx-auto h-[360px] w-full max-w-md sm:h-[440px]">
-          <Link href={`/${locale}/license`} className="group absolute inset-0" aria-label={d.common.viewLicense}>
-            {documents.map((doc, i) => {
-              const pos = [
-                "z-10 -rotate-6 ltr:translate-x-[-16%] rtl:translate-x-[16%] group-hover:-rotate-9 ltr:group-hover:translate-x-[-28%] rtl:group-hover:translate-x-[28%]",
-                "z-20 group-hover:-translate-y-3",
-                "z-0 rotate-6 ltr:translate-x-[16%] rtl:translate-x-[-16%] group-hover:rotate-9 ltr:group-hover:translate-x-[28%] rtl:group-hover:translate-x-[-28%]",
-              ][[1, 0, 2][i]];
-              return (
-                <span
-                  key={doc.id}
-                  className={`absolute top-0 left-[19%] block w-[62%] overflow-hidden rounded-lg bg-white shadow-[0_24px_48px_-16px_rgb(0_0_0/0.6)] transition-transform duration-500 ease-out ${pos}`}
-                >
-                  <Image src={doc.preview} alt={doc.title[locale]} width={900} height={1272} sizes="300px" className="h-auto w-full" />
-                </span>
-              );
-            })}
-            <span className="absolute bottom-0 left-1/2 z-30 inline-flex -translate-x-1/2 items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold whitespace-nowrap text-white shadow-lg">
-              <BadgeCheck className="size-4" /> {d.license.valid} {company.expiryDate}
-            </span>
-          </Link>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
 
 export function FinalCta({ locale, surface }: P & { surface?: boolean }) {
   const d = getDictionary(locale);

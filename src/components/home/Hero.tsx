@@ -78,7 +78,7 @@ export function Hero() {
       </div>
 
       {/* License card (desktop) */}
-      <motion.div
+      {/* <motion.div
         {...fadeUp(0.7)}
         className="absolute bottom-44 hidden xl:block ltr:right-[max(2rem,calc((100vw-76rem)/2+2rem))] rtl:left-[max(2rem,calc((100vw-76rem)/2+2rem))]"
       >
@@ -97,7 +97,7 @@ export function Hero() {
             <ArrowRight className="flip-rtl size-4 text-amber-300 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
           </div>
         </Link>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

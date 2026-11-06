@@ -15,7 +15,7 @@ export function Footer({ locale }: { locale: Locale }) {
     { href: `${base}/about`, label: dict.nav.about },
     { href: `${base}/services`, label: dict.nav.services },
     { href: `${base}/fleet`, label: dict.nav.fleet },
-    { href: `${base}/license`, label: dict.nav.license },
+    // { href: `${base}/license`, label: dict.nav.license },
     { href: `${base}/quote`, label: dict.nav.quote },
     { href: `${base}/faq`, label: dict.nav.faq },
     { href: `${base}/contact`, label: dict.nav.contact },
@@ -30,20 +30,15 @@ export function Footer({ locale }: { locale: Locale }) {
           <div className="lg:col-span-4">
             <Brand dark />
             <p className="mt-5 max-w-sm text-sm leading-relaxed">{dict.footer.about}</p>
-            <Link
+            {/* <Link
               href={`${base}/license`}
               className="group mt-6 inline-flex items-center gap-3 rounded-xl border border-white/10 p-3 transition-colors hover:border-brand-400/60"
             >
               <span className="grid size-10 place-items-center rounded-lg bg-brand-600 text-white">
                 <BadgeCheck className="size-6" />
               </span>
-              <span className="text-sm">
-                <span className="block font-bold text-white">
-                  {dict.common.licenseNo} {company.licenseNo}
-                </span>
-                <span className="text-xs text-silver-300">{dict.footer.licensed}</span>
-              </span>
-            </Link>
+             
+            </Link> */}
           </div>
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8">
@@ -114,15 +109,15 @@ export function Footer({ locale }: { locale: Locale }) {
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>
             {/* © {company.name.en} · {company.name.ar}. {dict.footer.rights} */}
-             MADE
-             BY
-             MUHAMMAD
-             HAROON
+             MADE 
+             BY  
+             MUHAMMAD 
+             HAROON 
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <span className="inline-flex items-center gap-1.5">
+            {/* <span className="inline-flex items-center gap-1.5">
               <FileText className="size-3.5" /> {dict.common.licenseNo} {company.licenseNo}
-            </span>
+            </span> */}
             <Link href={`${base}/privacy`} className="hover:text-white">
               {dict.footer.privacy}
             </Link>

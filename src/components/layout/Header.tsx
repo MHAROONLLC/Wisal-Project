@@ -152,13 +152,13 @@ export function Header() {
               <Languages className="size-4" />
               {dict.nav.switchLang}
             </Link>
-            <Link
+            {/* <Link
               href={`${base}/license`}
               className="focus-ring hidden h-9 items-center gap-1.5 rounded-lg px-3.5 text-sm font-semibold whitespace-nowrap text-white ring-1 ring-white/25 transition-all hover:bg-white hover:text-navy-900 md:inline-flex"
             >
               <FileText className="size-4" />
               {dict.nav.license}
-            </Link>
+            </Link> */}
             <span className="hidden sm:block">
               <Button href={`${base}/quote`} size="sm" variant="accent">
                 {dict.nav.quote}

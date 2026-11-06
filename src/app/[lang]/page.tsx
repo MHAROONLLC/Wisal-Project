@@ -3,7 +3,7 @@ import {
   AboutPreview,
   FinalCta,
   FleetPreview,
-  LicenseShowcase,
+ 
   Process,
   ServicesGrid,
   StatsBand,
@@ -45,7 +45,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <WhyChooseUs locale={lang} />
       <Process locale={lang} />
       <FleetPreview locale={lang} />
-      <LicenseShowcase locale={lang} />
+      
       <FinalCta locale={lang} />
     </>
   );
